@@ -1,5 +1,10 @@
 .cart{
     position: fixed;
+    border: 3px solid greenyellow;
+    margin-left: 20px;
+    width: 20%;
+    border-radius: 10px;
+    
 }
 .cart-calculation{
     margin-left: 10px;

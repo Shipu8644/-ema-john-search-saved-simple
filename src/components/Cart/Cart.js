@@ -13,9 +13,9 @@ const Cart = (props) => {
     return (
         <div>
             <div className="cart">
-                <h2 style={{ marginLeft: '100px' }}>Order Summary</h2>
+                <h2 style={{ marginLeft: '50px', color: 'brown' }}>Order Summary</h2>
                 <br />
-                <p style={{ marginLeft: '120px', fontSize: '1.2em' }}>Items Ordered: {cart.length}</p>
+                <p style={{ marginLeft: '60px', fontSize: '1.2em' }}>Items Ordered: {cart.length}</p>
                 <div className="cart-calculation">
                     <p>Total price</p>
                     <p>: <strong>${total.toFixed(2)}</strong></p>
