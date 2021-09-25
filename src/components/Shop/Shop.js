@@ -51,7 +51,7 @@ const Shop = () => {
 
 
     return (
-        <div>
+        <>
             <div>
                 <input
                     onChange={searchHandle}
@@ -70,7 +70,7 @@ const Shop = () => {
                     <Cart cart={cart}></Cart>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

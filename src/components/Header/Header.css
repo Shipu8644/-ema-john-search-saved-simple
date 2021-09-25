@@ -4,11 +4,11 @@
 }
 .header img{
     height: 80px;
-   background-color: rgba(243, 245, 220, 0.534);
+   background-color: honeydew;
 }
 
 .navBar {
-    background-color: beige;
+    background-color: honeydew;
     line-height: 40px;
     margin-bottom: 40px;
    
