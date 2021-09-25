@@ -4,7 +4,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Product.css'
 import Rating from 'react-rating';
 const Product = (props) => {
-    console.log(props)
+    // console.log(props)
     const { name, seller, price, stock, img, star } = props.product;
 
     const element = <FontAwesomeIcon icon={faShoppingCart} />

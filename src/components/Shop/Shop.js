@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getStoredCart } from '../../utilities/fakedb';
 
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
@@ -20,11 +21,26 @@ const Shop = () => {
             })
     }, [])
 
+    useEffect(() => {
+        const savedCart = getStoredCart();
+        // console.log(savedCart);
+        const storedCart = [];
+        if (products.length) {
+            for (const key in savedCart) {
+                const addedCart = products.find(product => product.key === key);
+                // console.log(addedCart);
+                storedCart.push(addedCart);
+            }
+            setCart(storedCart);
+        }
+    }, [products])
+
     //Handler Zone
     const addToCartHandler = (product) => {
         // console.log(product);
         const newCart = [...cart, product];
         setCart(newCart);
+        addToDb(product.key);
     }
     const searchHandle = (event) => {
         const searchText = event.target.value;
