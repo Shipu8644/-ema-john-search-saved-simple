@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
@@ -9,7 +8,7 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
     const [searchProducts, setSearchProducts] = useState([]);
 
-    const element = <FontAwesomeIcon icon={faShoppingCart} />
+
 
     //    UseEffect Zone
     useEffect(() => {
