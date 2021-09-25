@@ -23,8 +23,8 @@ const Cart = (props) => {
                     <p>: <strong>${shipping}</strong></p>
                     <p>Tax</p>
                     <p>: <strong>${tax.toFixed(2)}</strong></p>
-                    <p>Order Total</p>
-                    <p>: <strong>${orderTotal.toFixed(2)}</strong></p>
+                    <p style={{ color: 'brown', fontWeight: 'bold' }}>Order Total</p>
+                    <p>: <strong style={{ color: 'red' }}>${orderTotal.toFixed(2)}</strong></p>
                 </div>
 
             </div>

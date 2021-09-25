@@ -5,11 +5,16 @@ import './Shop.css'
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [searchProducts, setSearchProducts] = useState([]);
+
     //    UseEffect Zone
     useEffect(() => {
         fetch('./products.JSON')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data)
+                setSearchProducts(data)
+            })
     }, [])
 
     //Handler Zone
@@ -18,13 +23,24 @@ const Shop = () => {
         const newCart = [...cart, product];
         setCart(newCart);
     }
+    const searchHandle = (event) => {
+        const searchText = event.target.value;
+        const matchProduct = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()));
+        setSearchProducts(matchProduct);
+        console.log(matchProduct.length);
+    }
 
 
     return (
         <div>
+            <div>
+                <input
+                    onChange={searchHandle}
+                    className='inputStyle' type="text" placeholder='type here to search ' />
+            </div>
             <div className="shop-container">
                 <div className="product-container">
-                    {products.map(product => <Product
+                    {searchProducts.map(product => <Product
                         key={product.key}
                         product={product}
                         addToCartHandler={addToCartHandler}
